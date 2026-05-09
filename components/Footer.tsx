@@ -6,9 +6,9 @@ export default function Footer() {
           <img
             src="/logo.png"
             alt="DockIntake"
-            width={44}
-            height={44}
-            className="w-10 h-10 md:w-11 md:h-11 rounded-xl"
+            width={40}
+            height={40}
+            className="w-9 h-9 md:w-10 md:h-10 rounded-xl"
           />
           <span className="text-lg md:text-xl font-semibold text-cream">
             DockIntake

@@ -21,14 +21,20 @@ export default function Nav() {
   }, []);
 
   return (
-    <header
-      className={`fixed top-0 inset-x-0 z-40 transition-all duration-300 ${
-        scrolled
-          ? "backdrop-blur-xl bg-ink/70 border-b border-line"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="max-w-6xl mx-auto px-6 md:px-8 h-16 flex items-center justify-between">
+    <header className="fixed top-0 inset-x-0 z-40">
+      <div
+        aria-hidden
+        className={`absolute inset-0 backdrop-blur-xl bg-ink/70 transition-opacity duration-300 will-change-[opacity] ${
+          scrolled ? "opacity-100" : "opacity-0"
+        }`}
+      />
+      <div
+        aria-hidden
+        className={`absolute left-0 right-0 bottom-0 h-px bg-line transition-opacity duration-300 ${
+          scrolled ? "opacity-100" : "opacity-0"
+        }`}
+      />
+      <div className="relative max-w-6xl mx-auto px-6 md:px-8 h-16 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2.5 group">
           <img
             src="/logo.png"
