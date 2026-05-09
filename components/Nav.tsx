@@ -41,7 +41,7 @@ export default function Nav() {
             alt="DockIntake"
             width={44}
             height={44}
-            className="w-10 h-10 md:w-11 md:h-11 rounded-xl"
+            className="w-10 h-10 md:w-11 md:h-11 rounded-xl animate-logoBreathe motion-reduce:animate-none"
           />
           <span className="text-lg md:text-xl font-semibold tracking-tight text-cream">
             DockIntake

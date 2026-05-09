@@ -54,6 +54,16 @@ module.exports = {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-6px)" },
         },
+        logoBreathe: {
+          "0%, 100%": {
+            filter:
+              "drop-shadow(0 0 6px rgba(108,92,231,0.22)) drop-shadow(0 0 14px rgba(108,92,231,0.0))",
+          },
+          "50%": {
+            filter:
+              "drop-shadow(0 0 10px rgba(108,92,231,0.45)) drop-shadow(0 0 22px rgba(108,92,231,0.25))",
+          },
+        },
       },
       animation: {
         "fade-up": "fade-up 0.7s ease-out both",
@@ -61,6 +71,7 @@ module.exports = {
         pulseGlow: "pulseGlow 2.4s ease-out infinite",
         shimmer: "shimmer 3s linear infinite",
         float: "float 4s ease-in-out infinite",
+        logoBreathe: "logoBreathe 5.5s ease-in-out infinite",
       },
       backgroundImage: {
         "grid-fade":
