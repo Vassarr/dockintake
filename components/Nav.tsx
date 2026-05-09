@@ -30,20 +30,13 @@ export default function Nav() {
     >
       <div className="max-w-6xl mx-auto px-6 md:px-8 h-16 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2 group">
-          <span className="relative inline-flex items-center justify-center w-7 h-7 rounded-lg bg-accent shadow-glow">
-            <span className="absolute inset-0 rounded-lg bg-accent animate-pulseGlow" />
-            <svg
-              viewBox="0 0 24 24"
-              className="relative w-4 h-4 text-cream"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M4 6h16M4 12h10M4 18h16" />
-            </svg>
-          </span>
+          <img
+            src="/logo.png"
+            alt="DockIntake"
+            width={28}
+            height={28}
+            className="w-7 h-7 rounded-lg"
+          />
           <span className="font-semibold tracking-tight text-cream">
             DockIntake
           </span>
