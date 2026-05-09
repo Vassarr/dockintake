@@ -21,7 +21,7 @@ const problems = [
   },
   {
     title: "Missed calls cost you customers",
-    body: "Phone rings on a job site. By the time you call back, they’ve booked another shop.",
+    body: "Phone rings on a job site. By the time you call back, they’ve booked another company.",
     icon: (
       <path d="M22 16.92V21a1 1 0 0 1-1.1 1A19 19 0 0 1 2 4.1 1 1 0 0 1 3 3h4.09a1 1 0 0 1 1 .75l1 4a1 1 0 0 1-.27 1L7 10.5a16 16 0 0 0 6.5 6.5l1.75-1.82a1 1 0 0 1 1-.27l4 1a1 1 0 0 1 .75 1z" />
     ),

@@ -13,7 +13,7 @@ const rows = [
     pct: 18,
     rate: "Low",
     tone: "low" as const,
-    sub: "Customer already went with another shop.",
+    sub: "Customer already went with another company.",
   },
 ];
 
