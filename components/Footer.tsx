@@ -2,15 +2,17 @@ export default function Footer() {
   return (
     <footer className="border-t border-line">
       <div className="max-w-6xl mx-auto px-5 md:px-8 py-8 md:py-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-6">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2.5">
           <img
             src="/logo.png"
             alt="DockIntake"
-            width={28}
-            height={28}
-            className="w-7 h-7 rounded-lg"
+            width={44}
+            height={44}
+            className="w-10 h-10 md:w-11 md:h-11 rounded-xl"
           />
-          <span className="font-semibold text-cream">DockIntake</span>
+          <span className="text-lg md:text-xl font-semibold text-cream">
+            DockIntake
+          </span>
           <span className="text-cream/40 text-sm ml-3">
             © {new Date().getFullYear()}. Built for the trades.
           </span>

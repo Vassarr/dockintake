@@ -29,15 +29,15 @@ export default function Nav() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 md:px-8 h-16 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2 group">
+        <a href="#" className="flex items-center gap-2.5 group">
           <img
             src="/logo.png"
             alt="DockIntake"
-            width={28}
-            height={28}
-            className="w-7 h-7 rounded-lg"
+            width={44}
+            height={44}
+            className="w-10 h-10 md:w-11 md:h-11 rounded-xl"
           />
-          <span className="font-semibold tracking-tight text-cream">
+          <span className="text-lg md:text-xl font-semibold tracking-tight text-cream">
             DockIntake
           </span>
         </a>
