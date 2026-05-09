@@ -62,22 +62,22 @@ export default function FloatingVapiButton() {
       className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 group"
       aria-label={label}
     >
-      <span className="relative inline-flex items-center gap-2.5 px-5 py-3 rounded-full bg-ink/85 border border-accent/40 backdrop-blur-xl text-cream text-sm font-medium shadow-glow transition-all duration-300 hover:border-accent hover:shadow-[0_0_50px_-5px_rgba(108,92,231,0.7)]">
-        <span className="relative flex w-2.5 h-2.5">
+      <span className="relative inline-flex items-center whitespace-nowrap gap-1.5 md:gap-2.5 px-3 py-1.5 md:px-5 md:py-3 rounded-full bg-ink/85 border border-accent/40 backdrop-blur-xl text-cream text-[11px] md:text-sm font-medium shadow-glow transition-all duration-300 hover:border-accent hover:shadow-[0_0_50px_-5px_rgba(108,92,231,0.7)]">
+        <span className="relative flex w-1.5 h-1.5 md:w-2.5 md:h-2.5">
           <span
             className={`absolute inset-0 rounded-full ${
               active ? "bg-emerald-400" : "bg-accent"
             } animate-ping opacity-60`}
           />
           <span
-            className={`relative w-2.5 h-2.5 rounded-full ${
+            className={`relative w-1.5 h-1.5 md:w-2.5 md:h-2.5 rounded-full ${
               active ? "bg-emerald-400" : "bg-accent"
             }`}
           />
         </span>
         <svg
           viewBox="0 0 24 24"
-          className="w-4 h-4 text-accent-soft"
+          className="w-2.5 h-2.5 md:w-4 md:h-4 text-accent-soft"
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
