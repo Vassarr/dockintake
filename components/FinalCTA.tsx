@@ -18,7 +18,7 @@ export default function FinalCTA() {
 
       <div className="relative max-w-3xl mx-auto text-center">
         <h2 className="text-3xl md:text-6xl font-bold tracking-tight text-cream">
-          Stop missing jobs.
+          Stop losing leads.
         </h2>
         <p className="mt-4 md:mt-5 text-cream/70 text-base md:text-xl">
           Every missed call is a competitor&apos;s next sale. Live in 48 hours.

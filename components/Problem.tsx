@@ -10,8 +10,8 @@ const problems = [
     ),
   },
   {
-    title: "Slow callbacks lose jobs",
-    body: "You call back three hours later. They already got two other quotes. The job is gone.",
+    title: "Slow callbacks cost conversions",
+    body: "You call back three hours later. They already got two other quotes. The customer is gone.",
     icon: (
       <>
         <circle cx="12" cy="12" r="9" />
@@ -20,7 +20,7 @@ const problems = [
     ),
   },
   {
-    title: "Missed calls cost you jobs",
+    title: "Missed calls cost you customers",
     body: "Phone rings on a job site. By the time you call back, they’ve booked another shop.",
     icon: (
       <path d="M22 16.92V21a1 1 0 0 1-1.1 1A19 19 0 0 1 2 4.1 1 1 0 0 1 3 3h4.09a1 1 0 0 1 1 .75l1 4a1 1 0 0 1-.27 1L7 10.5a16 16 0 0 0 6.5 6.5l1.75-1.82a1 1 0 0 1 1-.27l4 1a1 1 0 0 1 .75 1z" />
@@ -35,7 +35,7 @@ export default function Problem() {
         <div className="max-w-2xl">
           <span className="eyebrow">The problem</span>
           <h2 className="mt-4 md:mt-5 text-3xl md:text-5xl font-bold tracking-tight text-cream">
-            You&apos;re losing jobs you{" "}
+            You&apos;re losing leads you{" "}
             <span className="text-cream/50">already paid for.</span>
           </h2>
           <p className="mt-4 md:mt-5 text-cream/70 text-base md:text-lg leading-relaxed">

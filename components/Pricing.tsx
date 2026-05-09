@@ -1,6 +1,21 @@
-const tiers = [
+import VapiButton from "./VapiButton";
+
+type Tier = {
+  name: string;
+  setupLabel: string;
+  price: string;
+  suffix: string;
+  description: string;
+  features: string[];
+  cta: string;
+  vapi?: boolean;
+  exampleHref?: string;
+  exampleLabel?: string;
+};
+
+const tiers: Tier[] = [
   {
-    name: "Starter",
+    name: "Foundation",
     setupLabel: "$300 setup",
     price: "$150",
     suffix: "/mo",
@@ -11,35 +26,38 @@ const tiers = [
       "Lead info: name, number, need",
       "Email support",
     ],
-    cta: "Get Starter",
+    cta: "Get Foundation",
   },
   {
-    name: "Landing Page",
+    name: "Professional",
     setupLabel: "$500 setup",
     price: "$150",
     suffix: "/mo",
     description: "Custom high-converting page + alerts.",
     features: [
-      "Everything in Starter",
+      "Everything in Foundation",
       "Custom high-converting landing page",
       "Built to generate more quote requests",
       "Priority support",
     ],
-    cta: "Get Landing Page",
+    cta: "Get Professional",
+    exampleHref: "https://northlandroofingcompany.com/",
+    exampleLabel: "View a landing page we built for a local roofing company",
   },
   {
-    name: "AI Agent",
+    name: "Enterprise",
     setupLabel: "Voice AI",
     price: "$300–$800",
     suffix: "/mo",
     description: "Voice AI answers your missed calls.",
     features: [
-      "Everything in Landing Page",
+      "Everything in Professional",
       "Voice AI answers calls live",
       "Custom scripts for your business",
       "CRM integration & personalization",
     ],
     cta: "Talk to us",
+    vapi: true,
   },
 ];
 
@@ -51,14 +69,14 @@ export default function Pricing() {
         <div className="text-center max-w-2xl mx-auto">
           <span className="eyebrow">Pricing</span>
           <h2 className="mt-4 md:mt-5 text-3xl md:text-5xl font-bold tracking-tight text-cream">
-            One job pays for this.
+            One conversion pays for this.
           </h2>
           <p className="mt-3 md:mt-4 text-cream/70 text-base md:text-lg">
-            Most HVAC or roofing jobs are{" "}
+            Most HVAC or roofing service calls are{" "}
             <span className="text-cream font-semibold">$300–$800+</span>.
           </p>
           <p className="mt-2 text-cream/50 text-sm md:text-base">
-            Catch one extra job a month and you&apos;re ahead.
+            Convert one extra lead a month and you&apos;re ahead.
           </p>
           <div className="mt-4 md:mt-5 inline-flex items-center gap-2 text-xs text-cream/55">
             <span className="w-1.5 h-1.5 rounded-full bg-accent-soft" />
@@ -107,9 +125,26 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              <a href="#cta" className="mt-7 btn-secondary">
-                {t.cta}
-              </a>
+              <div className="mt-auto">
+                {t.vapi ? (
+                  <VapiButton />
+                ) : (
+                  <a href="#cta" className="mt-7 btn-secondary w-full">
+                    {t.cta}
+                  </a>
+                )}
+
+                {t.exampleHref && (
+                  <a
+                    href={t.exampleHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 block text-center text-xs text-cream/45 hover:text-cream/70 underline decoration-line underline-offset-4 transition-colors"
+                  >
+                    See an example →
+                  </a>
+                )}
+              </div>
             </div>
           ))}
         </div>
@@ -117,6 +152,9 @@ export default function Pricing() {
         <p className="mt-8 text-center text-sm text-cream/45">
           Every plan: setup help, real onboarding call, 30-day money-back
           guarantee.
+        </p>
+        <p className="mt-2 text-center text-xs text-cream/40">
+          Locally owned in Minneapolis, Minnesota.
         </p>
       </div>
     </section>

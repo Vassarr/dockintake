@@ -9,7 +9,7 @@ import Features from "@/components/Features";
 import Pricing from "@/components/Pricing";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
-import FloatingAIButton from "@/components/FloatingAIButton";
+import FloatingVapiButton from "@/components/FloatingVapiButton";
 
 export default function Page() {
   return (
@@ -25,7 +25,7 @@ export default function Page() {
       <Pricing />
       <FinalCTA />
       <Footer />
-      <FloatingAIButton />
+      <FloatingVapiButton />
     </main>
   );
 }

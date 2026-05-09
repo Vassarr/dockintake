@@ -37,7 +37,7 @@ export default function Features() {
         <div className="max-w-2xl">
           <span className="eyebrow">What you get</span>
           <h2 className="mt-5 text-3xl md:text-5xl font-bold tracking-tight text-cream">
-            More jobs.
+            More leads. Faster response.
           </h2>
         </div>
 

@@ -29,7 +29,7 @@ export default function Hero() {
           Turn quote requests into{" "}
           <span className="relative whitespace-nowrap">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent-soft via-accent to-accent-soft bg-[length:200%_100%] animate-shimmer">
-              booked jobs.
+              booked work.
             </span>
           </span>
         </h1>
