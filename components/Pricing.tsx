@@ -8,6 +8,7 @@ type Tier = {
   description: string;
   features: string[];
   cta: string;
+  ctaHref?: string;
   vapi?: boolean;
   exampleHref?: string;
   exampleLabel?: string;
@@ -27,6 +28,7 @@ const tiers: Tier[] = [
       "Email support",
     ],
     cta: "Get Foundation",
+    ctaHref: "https://buy.stripe.com/aFadR21my0y13Lt1SDabK04",
   },
   {
     name: "Professional",
@@ -41,6 +43,7 @@ const tiers: Tier[] = [
       "Priority support",
     ],
     cta: "Get Professional",
+    ctaHref: "https://buy.stripe.com/6oUfZa7KWeoRfub0OzabK05",
     exampleHref: "https://northlandroofingcompany.com/",
     exampleLabel: "View a landing page we built for a local roofing company",
   },
@@ -129,7 +132,12 @@ export default function Pricing() {
                 {t.vapi ? (
                   <VapiButton />
                 ) : (
-                  <a href="#cta" className="mt-7 btn-secondary w-full">
+                  <a
+                    href={t.ctaHref ?? "#cta"}
+                    target={t.ctaHref ? "_blank" : undefined}
+                    rel={t.ctaHref ? "noopener noreferrer" : undefined}
+                    className="mt-7 btn-secondary w-full"
+                  >
                     {t.cta}
                   </a>
                 )}

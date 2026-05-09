@@ -18,7 +18,7 @@ export default function Hero() {
               <span className="absolute inset-0 rounded-full bg-accent animate-ping opacity-70" />
               <span className="relative w-1.5 h-1.5 rounded-full bg-accent" />
             </span>
-            For HVAC · Roofing · Plumbing
+            For HVAC · Roofing · Plumbing · Electrical
           </span>
         </div>
 

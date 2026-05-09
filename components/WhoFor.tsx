@@ -9,17 +9,17 @@ export default function WhoFor() {
           <div className="text-xs uppercase tracking-[0.2em] text-cream/45">
             Built for
           </div>
-          <ul className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2">
+          <ul className="flex flex-wrap items-center justify-center gap-x-2 gap-y-2 md:gap-x-3">
             {trades.map((t, i) => (
               <li
                 key={t}
-                className="flex items-center gap-3 text-cream font-semibold text-base md:text-lg"
+                className="flex items-center md:gap-3 text-cream font-semibold text-sm md:text-lg"
               >
                 <span className="px-3 py-1 rounded-full border border-line bg-cream/[0.03] hover:border-accent/50 transition">
                   {t}
                 </span>
                 {i < trades.length - 1 && (
-                  <span className="text-accent-soft">•</span>
+                  <span className="hidden md:inline text-accent-soft">•</span>
                 )}
               </li>
             ))}
