@@ -56,12 +56,14 @@ module.exports = {
         },
         logoBreathe: {
           "0%, 100%": {
+            transform: "scale(1)",
             filter:
-              "drop-shadow(0 0 6px rgba(108,92,231,0.22)) drop-shadow(0 0 14px rgba(108,92,231,0.0))",
+              "drop-shadow(0 0 6px rgba(108,92,231,0.30)) drop-shadow(0 0 14px rgba(108,92,231,0.10))",
           },
           "50%": {
+            transform: "scale(1.04)",
             filter:
-              "drop-shadow(0 0 10px rgba(108,92,231,0.45)) drop-shadow(0 0 22px rgba(108,92,231,0.25))",
+              "drop-shadow(0 0 16px rgba(108,92,231,0.70)) drop-shadow(0 0 32px rgba(108,92,231,0.40))",
           },
         },
       },
@@ -71,7 +73,7 @@ module.exports = {
         pulseGlow: "pulseGlow 2.4s ease-out infinite",
         shimmer: "shimmer 3s linear infinite",
         float: "float 4s ease-in-out infinite",
-        logoBreathe: "logoBreathe 5.5s ease-in-out infinite",
+        logoBreathe: "logoBreathe 5s ease-in-out infinite",
       },
       backgroundImage: {
         "grid-fade":
