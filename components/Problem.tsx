@@ -34,23 +34,23 @@ export default function Problem() {
       <div className="max-w-6xl mx-auto">
         <div className="max-w-2xl">
           <span className="eyebrow">The problem</span>
-          <h2 className="mt-4 md:mt-5 text-3xl md:text-5xl font-bold tracking-tight text-cream">
+          <h2 className="mt-3 md:mt-5 text-2xl md:text-5xl font-bold tracking-tight text-cream">
             You&apos;re losing leads you{" "}
             <span className="text-cream/50">already paid for.</span>
           </h2>
-          <p className="mt-4 md:mt-5 text-cream/70 text-base md:text-lg leading-relaxed">
+          <p className="mt-3 md:mt-5 text-cream/70 text-base md:text-lg leading-relaxed">
             Ads bring the quote requests in. The wait before you call back is
             where the money goes.
           </p>
         </div>
 
-        <div className="mt-8 md:mt-12 grid md:grid-cols-3 gap-4 md:gap-5">
+        <div className="mt-6 md:mt-12 grid md:grid-cols-3 gap-3 md:gap-5">
           {problems.map((p) => (
-            <div key={p.title} className="card p-4 md:p-6">
-              <div className="w-10 h-10 rounded-xl bg-accent/10 border border-accent/25 flex items-center justify-center text-accent-soft">
+            <div key={p.title} className="card p-2.5 md:p-6">
+              <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-accent/10 border border-accent/25 flex items-center justify-center text-accent-soft">
                 <svg
                   viewBox="0 0 24 24"
-                  className="w-5 h-5"
+                  className="w-4 h-4 md:w-5 md:h-5"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
@@ -60,10 +60,10 @@ export default function Problem() {
                   {p.icon}
                 </svg>
               </div>
-              <h3 className="mt-5 text-lg font-semibold text-cream">
+              <h3 className="mt-3 md:mt-5 text-base md:text-lg font-semibold text-cream">
                 {p.title}
               </h3>
-              <p className="mt-2 text-cream/65 leading-relaxed">{p.body}</p>
+              <p className="mt-1 md:mt-2 text-sm md:text-base text-cream/65 leading-snug md:leading-relaxed">{p.body}</p>
             </div>
           ))}
         </div>

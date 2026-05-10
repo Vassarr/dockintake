@@ -3,7 +3,7 @@ export default function FinalCTA() {
     <section id="cta" className="section relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div
-          className="glow-blob"
+          className="glow-blob hidden md:block"
           style={{
             width: 700,
             height: 700,
@@ -13,6 +13,17 @@ export default function FinalCTA() {
             opacity: 0.4,
           }}
         />
+        <div
+          className="glow-blob md:hidden"
+          style={{
+            width: 360,
+            height: 360,
+            top: -60,
+            left: "50%",
+            transform: "translateX(-50%)",
+            opacity: 0.35,
+          }}
+        />
         <div className="absolute inset-0 bg-grid mask-radial-soft opacity-30" />
       </div>
 
@@ -20,10 +31,10 @@ export default function FinalCTA() {
         <h2 className="text-3xl md:text-6xl font-bold tracking-tight text-cream">
           Stop losing leads.
         </h2>
-        <p className="mt-4 md:mt-5 text-cream/70 text-base md:text-xl">
+        <p className="mt-2.5 md:mt-5 text-sm md:text-xl text-cream/70">
           Every missed call is a competitor&apos;s next sale. Live in 48 hours.
         </p>
-        <div className="mt-7 md:mt-9 flex flex-col sm:flex-row gap-3 justify-center">
+        <div className="mt-4 md:mt-9 flex flex-col sm:flex-row gap-2.5 md:gap-3 justify-center">
           <a href="#pricing" className="btn-primary">
             Get Started
             <svg
@@ -42,10 +53,10 @@ export default function FinalCTA() {
             Try the demo first
           </a>
         </div>
-        <p className="mt-6 text-sm text-cream/45">
+        <p className="mt-4 md:mt-6 text-xs md:text-sm text-cream/45">
           No long contracts · 30-day money-back guarantee
         </p>
-        <p className="mt-3 text-sm text-cream/55">
+        <p className="mt-1.5 md:mt-3 text-xs md:text-sm text-cream/55">
           Questions? Email{" "}
           <a
             href="mailto:help@dockintake.com"

@@ -23,17 +23,17 @@ export default function SpeedWins() {
       <div className="max-w-5xl mx-auto">
         <div className="text-center max-w-2xl mx-auto">
           <span className="eyebrow">Speed wins</span>
-          <h2 className="mt-4 md:mt-5 text-3xl md:text-5xl font-bold tracking-tight text-cream">
+          <h2 className="mt-3 md:mt-5 text-2xl md:text-5xl font-bold tracking-tight text-cream">
             First to respond wins.
           </h2>
         </div>
 
-        <div className="mt-8 md:mt-12 card p-4 md:p-10">
+        <div className="mt-5 md:mt-12 card p-3 md:p-10">
           <div className="text-xs uppercase tracking-wider text-cream/45">
             Response time vs. close rate
           </div>
 
-          <div className="mt-6 space-y-7">
+          <div className="mt-4 md:mt-6 space-y-3.5 md:space-y-7">
             {rows.map((r) => (
               <div key={r.label}>
                 <div className="flex items-baseline justify-between gap-4">
@@ -47,7 +47,7 @@ export default function SpeedWins() {
                     >
                       {r.tag}
                     </span>
-                    <span className="text-cream font-semibold text-lg md:text-xl">
+                    <span className="text-cream font-semibold text-base md:text-xl">
                       {r.label}
                     </span>
                   </div>
@@ -60,7 +60,7 @@ export default function SpeedWins() {
                   </span>
                 </div>
 
-                <div className="mt-3 relative h-3 rounded-full bg-cream/[0.04] overflow-hidden border border-line">
+                <div className="mt-2 md:mt-3 relative h-2 md:h-3 rounded-full bg-cream/[0.04] overflow-hidden border border-line">
                   <div
                     className={`absolute inset-y-0 left-0 rounded-full transition-all duration-1000 ${
                       r.tone === "high"
@@ -71,12 +71,12 @@ export default function SpeedWins() {
                   />
                 </div>
 
-                <div className="mt-2 text-sm text-cream/55">{r.sub}</div>
+                <div className="mt-1.5 md:mt-2 text-xs md:text-sm text-cream/55">{r.sub}</div>
               </div>
             ))}
           </div>
 
-          <div className="mt-8 pt-6 border-t border-line text-sm text-cream/55 text-center">
+          <div className="mt-4 md:mt-8 pt-3 md:pt-6 border-t border-line text-xs md:text-sm text-cream/55 text-center">
             DockIntake puts you in the{" "}
             <span className="text-cream">under-5-minute group</span> — every
             time.

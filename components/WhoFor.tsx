@@ -2,10 +2,10 @@ const trades = ["HVAC", "Roofing", "Plumbing", "Electrical"];
 
 export default function WhoFor() {
   return (
-    <section className="relative py-10 md:py-14 border-y border-line bg-cream/[0.015]">
+    <section className="relative py-2.5 md:py-14 border-y border-line bg-cream/[0.015]">
       <div className="absolute inset-0 bg-dots opacity-30 mask-radial-soft pointer-events-none" />
       <div className="relative max-w-5xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center justify-center gap-x-6 gap-y-4 text-center">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-x-6 gap-y-3 md:gap-y-4 text-center">
           <div className="text-xs uppercase tracking-[0.2em] text-cream/45">
             Built for
           </div>

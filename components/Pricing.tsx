@@ -71,23 +71,23 @@ export default function Pricing() {
       <div className="relative max-w-6xl mx-auto">
         <div className="text-center max-w-2xl mx-auto">
           <span className="eyebrow">Pricing</span>
-          <h2 className="mt-4 md:mt-5 text-3xl md:text-5xl font-bold tracking-tight text-cream">
+          <h2 className="mt-3 md:mt-5 text-2xl md:text-5xl font-bold tracking-tight text-cream">
             One conversion pays for this.
           </h2>
-          <p className="mt-3 md:mt-4 text-cream/70 text-base md:text-lg">
+          <p className="mt-2 md:mt-4 text-sm md:text-lg text-cream/70">
             Most HVAC or roofing service calls are{" "}
             <span className="text-cream font-semibold">$300–$800+</span>.
           </p>
-          <p className="mt-2 text-cream/50 text-sm md:text-base">
+          <p className="mt-1.5 md:mt-2 text-xs md:text-base text-cream/50">
             Convert one extra lead a month and you&apos;re ahead.
           </p>
-          <div className="mt-4 md:mt-5 inline-flex items-center gap-2 text-xs text-cream/55">
+          <div className="mt-3 md:mt-5 inline-flex items-center gap-2 text-xs text-cream/55">
             <span className="w-1.5 h-1.5 rounded-full bg-accent-soft" />
             No long contracts · Cancel anytime
           </div>
         </div>
 
-        <div className="mt-8 md:mt-12 grid md:grid-cols-3 gap-4 md:gap-5 items-stretch">
+        <div className="mt-4 md:mt-12 grid md:grid-cols-3 gap-3 md:gap-5 items-stretch">
           {tiers.map((t) => (
             <div
               key={t.name}
@@ -157,11 +157,11 @@ export default function Pricing() {
           ))}
         </div>
 
-        <p className="mt-8 text-center text-sm text-cream/45">
+        <p className="mt-5 md:mt-8 text-center text-xs md:text-sm text-cream/45">
           Every plan: setup help, real onboarding call, 30-day money-back
           guarantee.
         </p>
-        <p className="mt-2 text-center text-xs text-cream/40">
+        <p className="mt-1.5 md:mt-2 text-center text-xs text-cream/40">
           Locally owned in Minneapolis, Minnesota.
         </p>
       </div>

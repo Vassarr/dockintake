@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="border-t border-line">
-      <div className="max-w-6xl mx-auto px-5 md:px-8 py-8 md:py-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-6">
+      <div className="max-w-6xl mx-auto px-5 md:px-8 py-5 md:py-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 md:gap-6">
         <div className="flex items-center gap-2.5">
           <img
             src="/logo.png"

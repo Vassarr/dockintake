@@ -8,7 +8,7 @@ const trustItems = [
 
 export default function Hero() {
   return (
-    <section className="relative pt-20 md:pt-32 pb-10 md:pb-16 overflow-hidden">
+    <section className="relative pt-20 md:pt-32 pb-3 md:pb-16 overflow-hidden">
       <GridBackground />
 
       <div className="relative max-w-5xl mx-auto px-5 md:px-6 text-center">
@@ -23,7 +23,7 @@ export default function Hero() {
         </div>
 
         <h1
-          className="mt-5 text-3xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] md:leading-[1.05] text-cream animate-fade-up"
+          className="mt-4 md:mt-5 text-3xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] md:leading-[1.05] text-cream animate-fade-up"
           style={{ animationDelay: "0.05s" }}
         >
           Turn quote requests into{" "}
@@ -35,7 +35,7 @@ export default function Hero() {
         </h1>
 
         <p
-          className="mt-5 max-w-2xl mx-auto text-base md:text-xl text-cream/75 leading-relaxed animate-fade-up"
+          className="mt-4 md:mt-5 max-w-2xl mx-auto text-base md:text-xl text-cream/75 leading-relaxed animate-fade-up"
           style={{ animationDelay: "0.12s" }}
         >
           When someone fills out your form, you know instantly — so you can
@@ -43,7 +43,7 @@ export default function Hero() {
         </p>
 
         <div
-          className="mt-8 flex flex-col sm:flex-row gap-3 justify-center animate-fade-up"
+          className="mt-6 md:mt-8 flex flex-col sm:flex-row gap-3 justify-center animate-fade-up"
           style={{ animationDelay: "0.2s" }}
         >
           <a href="#how" className="btn-primary">
@@ -66,7 +66,7 @@ export default function Hero() {
         </div>
 
         <ul
-          className="mt-6 md:mt-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 md:gap-x-6 md:gap-y-3 text-xs md:text-sm text-cream/55 animate-fade-up"
+          className="mt-5 md:mt-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 md:gap-x-6 md:gap-y-3 text-xs md:text-sm text-cream/55 animate-fade-up"
           style={{ animationDelay: "0.34s" }}
         >
           {trustItems.map((t) => (
@@ -89,23 +89,23 @@ export default function Hero() {
 
         {/* Hero preview frame: form → text */}
         <div
-          className="relative mt-10 md:mt-14 mx-auto max-w-3xl w-full animate-fade-up"
+          className="relative mt-5 md:mt-14 mx-auto max-w-3xl w-full animate-fade-up"
           style={{ animationDelay: "0.42s" }}
         >
           <div className="absolute -inset-px rounded-3xl bg-gradient-to-b from-accent/40 via-transparent to-transparent blur-xl opacity-60" />
-          <div className="relative card p-4 md:p-7 text-left">
-            <div className="grid md:grid-cols-[1fr_auto_1fr] items-center gap-5">
+          <div className="relative card p-2.5 md:p-7 text-left">
+            <div className="grid md:grid-cols-[1fr_auto_1fr] items-center gap-2.5 md:gap-5">
               {/* Form side */}
-              <div className="rounded-2xl border border-line bg-cream/[0.03] p-4">
-                <div className="text-[11px] uppercase tracking-wider text-cream/45">
+              <div className="rounded-2xl border border-line bg-cream/[0.03] p-2.5 md:p-4">
+                <div className="text-[10px] md:text-[11px] uppercase tracking-wider text-cream/45">
                   Your website form
                 </div>
-                <div className="mt-3 space-y-2">
-                  <div className="h-3 rounded bg-cream/10 w-2/3" />
-                  <div className="h-7 rounded-md bg-cream/[0.06] border border-line" />
-                  <div className="h-3 rounded bg-cream/10 w-1/2" />
-                  <div className="h-7 rounded-md bg-cream/[0.06] border border-line" />
-                  <div className="mt-2 inline-flex items-center justify-center w-full h-8 rounded-md bg-accent text-cream text-xs font-semibold shadow-glow">
+                <div className="mt-1.5 md:mt-3 space-y-1 md:space-y-2">
+                  <div className="h-2 md:h-3 rounded bg-cream/10 w-2/3" />
+                  <div className="h-5 md:h-7 rounded-md bg-cream/[0.06] border border-line" />
+                  <div className="h-2 md:h-3 rounded bg-cream/10 w-1/2" />
+                  <div className="h-5 md:h-7 rounded-md bg-cream/[0.06] border border-line" />
+                  <div className="mt-1 md:mt-2 inline-flex items-center justify-center w-full h-6 md:h-8 rounded-md bg-accent text-cream text-[11px] md:text-xs font-semibold shadow-glow">
                     Request a quote
                   </div>
                 </div>

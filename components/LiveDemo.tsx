@@ -52,10 +52,10 @@ export default function LiveDemo() {
       <div className="relative max-w-6xl mx-auto">
         <div className="text-center max-w-2xl mx-auto">
           <span className="eyebrow">Live demo</span>
-          <h2 className="mt-4 md:mt-5 text-3xl md:text-5xl font-bold tracking-tight text-cream">
+          <h2 className="mt-3 md:mt-5 text-2xl md:text-5xl font-bold tracking-tight text-cream">
             Watch a quote request turn into a call.
           </h2>
-          <div className="mt-6 md:mt-7">
+          <div className="mt-5 md:mt-7">
             <button
               onClick={run}
               disabled={running}
@@ -75,7 +75,7 @@ export default function LiveDemo() {
         </div>
 
         {/* Timeline */}
-        <div className="relative mt-8 md:mt-12 grid md:grid-cols-3 gap-4 md:gap-5 w-full max-w-full">
+        <div className="relative mt-6 md:mt-12 grid md:grid-cols-3 gap-3 md:gap-5 w-full max-w-full">
           <div className="hidden md:block absolute top-7 left-[14%] right-[14%] h-px bg-line">
             <div
               className="h-px bg-gradient-to-r from-accent via-accent-soft to-accent transition-all duration-700"
@@ -95,13 +95,13 @@ export default function LiveDemo() {
           {STEPS.map((s, i) => (
             <div
               key={s.key}
-              className={`card p-4 md:p-5 transition-all duration-500 ${
+              className={`card p-2.5 md:p-5 transition-all duration-500 ${
                 reached(i) ? "border-accent/50" : ""
               }`}
             >
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2.5 md:gap-3">
                 <span
-                  className={`relative flex w-10 h-10 items-center justify-center rounded-full border transition-all duration-500 ${
+                  className={`relative flex w-8 h-8 md:w-10 md:h-10 items-center justify-center rounded-full border transition-all duration-500 ${
                     reached(i)
                       ? "bg-accent text-cream border-accent shadow-glow"
                       : "bg-ink text-cream/50 border-line"
@@ -110,7 +110,7 @@ export default function LiveDemo() {
                   {reached(i) ? (
                     <svg
                       viewBox="0 0 24 24"
-                      className="w-5 h-5"
+                      className="w-4 h-4 md:w-5 md:h-5"
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="2.5"
@@ -131,11 +131,11 @@ export default function LiveDemo() {
                   <div className="text-xs text-cream/50">Step {i + 1}</div>
                 </div>
               </div>
-              <p className="mt-4 text-cream/65 text-sm leading-relaxed">
+              <p className="mt-2 md:mt-4 text-cream/65 text-xs md:text-sm leading-snug md:leading-relaxed">
                 {s.sub}
               </p>
 
-              <div className="mt-5">
+              <div className="mt-3 md:mt-5">
                 {s.key === "submit" && <FormSubmit active={active === 0} reached={reached(0)} />}
                 {s.key === "text" && <TextSent active={active === 1} reached={reached(1)} />}
                 {s.key === "call" && <CallNow active={active === 2} reached={reached(2)} />}
@@ -151,20 +151,20 @@ export default function LiveDemo() {
 function FormSubmit({ active, reached }: { active: boolean; reached: boolean }) {
   return (
     <div
-      className={`rounded-2xl border bg-cream/[0.03] p-4 h-32 transition-all duration-500 ${
+      className={`rounded-2xl border bg-cream/[0.03] p-2.5 md:p-4 h-[104px] md:h-32 transition-all duration-500 ${
         reached ? "border-accent/40" : "border-line opacity-70"
       }`}
     >
       <div className="text-[10px] uppercase tracking-wider text-cream/45">
         Quote request form
       </div>
-      <div className="mt-2 space-y-1.5">
-        <div className="h-2 rounded bg-cream/10 w-2/3" />
-        <div className="h-5 rounded bg-cream/[0.06] border border-line" />
-        <div className="h-2 rounded bg-cream/10 w-1/2" />
+      <div className="mt-1 md:mt-2 space-y-1 md:space-y-1.5">
+        <div className="h-1.5 md:h-2 rounded bg-cream/10 w-2/3" />
+        <div className="h-4 md:h-5 rounded bg-cream/[0.06] border border-line" />
+        <div className="h-1.5 md:h-2 rounded bg-cream/10 w-1/2" />
       </div>
       <div
-        className={`mt-2 inline-flex items-center justify-center text-[11px] font-semibold px-3 py-1.5 rounded-md transition-all ${
+        className={`mt-1.5 md:mt-2 inline-flex items-center justify-center text-[11px] font-semibold px-3 py-1 md:py-1.5 rounded-md transition-all ${
           active
             ? "bg-accent text-cream shadow-glow scale-[1.03]"
             : reached
@@ -181,7 +181,7 @@ function FormSubmit({ active, reached }: { active: boolean; reached: boolean }) 
 function TextSent({ active, reached }: { active: boolean; reached: boolean }) {
   return (
     <div
-      className={`rounded-2xl border bg-cream/[0.03] p-4 h-32 transition-all duration-500 ${
+      className={`rounded-2xl border bg-cream/[0.03] p-2.5 md:p-4 h-[104px] md:h-32 transition-all duration-500 ${
         reached ? "border-accent/40" : "border-line opacity-60"
       }`}
     >
@@ -220,7 +220,7 @@ function TextSent({ active, reached }: { active: boolean; reached: boolean }) {
 function CallNow({ active, reached }: { active: boolean; reached: boolean }) {
   return (
     <div
-      className={`rounded-2xl border p-4 h-32 flex items-center gap-4 transition-all duration-500 ${
+      className={`rounded-2xl border p-2.5 md:p-4 h-[104px] md:h-32 flex items-center gap-3 md:gap-4 transition-all duration-500 ${
         reached
           ? "border-accent/50 bg-accent/10"
           : "border-line bg-cream/[0.03] opacity-60"

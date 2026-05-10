@@ -36,18 +36,18 @@ export default function Features() {
       <div className="max-w-6xl mx-auto">
         <div className="max-w-2xl">
           <span className="eyebrow">What you get</span>
-          <h2 className="mt-5 text-3xl md:text-5xl font-bold tracking-tight text-cream">
+          <h2 className="mt-3 md:mt-5 text-2xl md:text-5xl font-bold tracking-tight text-cream">
             More leads. Faster response.
           </h2>
         </div>
 
-        <div className="mt-8 md:mt-10 grid md:grid-cols-3 gap-4 md:gap-5">
+        <div className="mt-6 md:mt-10 grid md:grid-cols-3 gap-3 md:gap-5">
           {blocks.map((b) => (
-            <div key={b.title} className="card p-4 md:p-6 group">
-              <div className="w-10 h-10 rounded-xl bg-accent/10 border border-accent/25 flex items-center justify-center text-accent-soft transition-colors group-hover:bg-accent/20">
+            <div key={b.title} className="card p-2.5 md:p-6 group">
+              <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-accent/10 border border-accent/25 flex items-center justify-center text-accent-soft transition-colors group-hover:bg-accent/20">
                 <svg
                   viewBox="0 0 24 24"
-                  className="w-5 h-5"
+                  className="w-4 h-4 md:w-5 md:h-5"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
@@ -57,10 +57,10 @@ export default function Features() {
                   {b.icon}
                 </svg>
               </div>
-              <h3 className="mt-5 text-lg font-semibold text-cream">
+              <h3 className="mt-3 md:mt-5 text-base md:text-lg font-semibold text-cream">
                 {b.title}
               </h3>
-              <p className="mt-2 text-cream/65 leading-relaxed">{b.body}</p>
+              <p className="mt-1 md:mt-2 text-sm md:text-base text-cream/65 leading-snug md:leading-relaxed">{b.body}</p>
             </div>
           ))}
         </div>
