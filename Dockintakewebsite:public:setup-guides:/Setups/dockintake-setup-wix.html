@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DockIntake Setup — Wix</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #0a0a0f;
+  --bg-soft: #14141c;
+  --bg-card: #1a1a24;
+  --bg-elev: #1f1f2c;
+  --line: rgba(255,255,255,0.08);
+  --line-strong: rgba(255,255,255,0.14);
+  --text: #f4f4f5;
+  --text-mute: #a1a1aa;
+  --text-dim: #71717a;
+  --accent: #8b5cf6;
+  --accent-bright: #a78bfa;
+  --accent-soft: rgba(139,92,246,0.12);
+  --accent-glow: rgba(139,92,246,0.35);
+  --sans: 'Geist', system-ui, sans-serif;
+  --mono: 'Geist Mono', ui-monospace, monospace;
+}
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
+  line-height: 1.5;
+}
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image:
+    radial-gradient(circle at 15% 10%, rgba(139,92,246,0.08) 0%, transparent 40%),
+    radial-gradient(circle at 85% 90%, rgba(139,92,246,0.05) 0%, transparent 40%),
+    linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 56px 56px, 56px 56px;
+  pointer-events: none;
+  z-index: 0;
+}
+main {
+  position: relative;
+  z-index: 1;
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6rem;
+}
+
+/* HEADER */
+.brand-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+.brand {
+  display: flex; align-items: center; gap: 12px;
+}
+.brand-mark {
+  width: 36px; height: 36px;
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+  border-radius: 9px;
+  position: relative;
+  box-shadow: 0 0 24px rgba(139,92,246,0.3), inset 0 1px 0 rgba(255,255,255,0.15);
+}
+.brand-mark::before {
+  content: '';
+  position: absolute;
+  top: 9px; left: 7px; right: 7px;
+  height: 2px;
+  background: white;
+  border-radius: 1px;
+  box-shadow: 0 5px 0 white, 0 10px 0 white;
+}
+.brand-name {
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: -0.025em;
+}
+.platform-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.platform-tag::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--accent-glow);
+}
+
+/* HERO */
+.hero {
+  margin-bottom: 3.5rem;
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+  padding: 6px 12px;
+  background: var(--accent-soft);
+  border: 1px solid rgba(139,92,246,0.2);
+  border-radius: 100px;
+}
+.eyebrow::before {
+  content: '';
+  width: 5px; height: 5px;
+  background: var(--accent-bright);
+  border-radius: 50%;
+}
+h1 {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  margin-bottom: 1rem;
+}
+h1 em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--accent), var(--accent-bright));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.lede {
+  font-size: 1.08rem;
+  color: var(--text-mute);
+  line-height: 1.6;
+  max-width: 580px;
+}
+
+/* INFO STRIP */
+.info-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 3.5rem;
+}
+.info-cell {
+  background: var(--bg-soft);
+  padding: 1.25rem 1.4rem;
+}
+.info-label {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+}
+.info-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* SECTION */
+section {
+  margin-bottom: 3rem;
+}
+.section-label {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-label::before {
+  content: '';
+  width: 24px; height: 1px;
+  background: var(--accent);
+}
+h2 {
+  font-size: 1.55rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.25rem;
+  line-height: 1.2;
+}
+p {
+  font-size: 0.98rem;
+  color: var(--text-mute);
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+p:last-child { margin-bottom: 0; }
+
+/* CHECKLIST */
+.checklist {
+  list-style: none;
+  display: grid;
+  gap: 0.6rem;
+}
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 0.85rem 1.1rem;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+.checklist li::before {
+  content: '';
+  width: 18px; height: 18px;
+  margin-top: 2px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  border: 1px solid rgba(139,92,246,0.4);
+  flex-shrink: 0;
+  position: relative;
+}
+.checklist li::after {
+  content: '';
+  position: absolute;
+  margin-left: 5px;
+  margin-top: 7px;
+  width: 8px; height: 4px;
+  border-left: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  transform: rotate(-45deg);
+}
+
+/* STEPS */
+.steps {
+  display: grid;
+  gap: 1rem;
+  counter-reset: step;
+}
+.step {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.5rem 1.75rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+.step::before {
+  counter-increment: step;
+  content: counter(step, decimal-leading-zero);
+  position: absolute;
+  top: 1.4rem;
+  right: 1.5rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--text-dim);
+}
+.step-title {
+  font-size: 1.08rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--text);
+  margin-bottom: 0.65rem;
+  padding-right: 60px;
+}
+.step-body {
+  font-size: 0.95rem;
+  color: var(--text-mute);
+  line-height: 1.65;
+}
+.step-body p { margin-bottom: 0.7rem; font-size: 0.95rem; }
+.step-body p:last-child { margin-bottom: 0; }
+.step-body strong { color: var(--text); font-weight: 600; }
+.step-body code {
+  font-family: var(--mono);
+  font-size: 0.85em;
+  background: var(--bg-elev);
+  color: var(--accent-bright);
+  padding: 1px 6px;
+  border-radius: 4px;
+  border: 1px solid var(--line);
+}
+
+.path {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 0.82em;
+  color: var(--accent-bright);
+  background: var(--accent-soft);
+  padding: 2px 8px;
+  border-radius: 5px;
+  border: 1px solid rgba(139,92,246,0.2);
+}
+
+.note-inline {
+  margin-top: 0.85rem;
+  padding: 0.75rem 1rem;
+  background: var(--bg-elev);
+  border-left: 2px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  font-size: 0.88rem;
+  color: var(--text-mute);
+  line-height: 1.55;
+}
+.note-inline strong { color: var(--accent-bright); }
+
+/* REPLY BLOCK */
+.reply-block {
+  background: linear-gradient(135deg, var(--bg-card), var(--bg-elev));
+  border: 1px solid rgba(139,92,246,0.25);
+  border-radius: 16px;
+  padding: 2rem 2.25rem;
+  position: relative;
+  overflow: hidden;
+}
+.reply-block::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 250px; height: 250px;
+  background: radial-gradient(circle, var(--accent-glow), transparent 70%);
+  pointer-events: none;
+}
+.reply-title {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-bright);
+  margin-bottom: 1rem;
+}
+.reply-list {
+  list-style: none;
+  display: grid;
+  gap: 0.65rem;
+  margin-bottom: 1.25rem;
+}
+.reply-list li {
+  display: flex;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.55;
+}
+.reply-list li span.num {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--accent-bright);
+  flex-shrink: 0;
+  margin-top: 2px;
+  width: 22px;
+}
+.reply-list li strong { font-weight: 600; }
+.reply-list li em { color: var(--text-mute); font-style: normal; font-size: 0.88rem; display: block; margin-top: 2px; }
+
+.example {
+  margin-top: 1.5rem;
+  padding: 1.1rem 1.25rem;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--text-mute);
+  line-height: 1.75;
+}
+.example .label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+}
+.example .field {
+  color: var(--accent-bright);
+}
+
+/* FAQ */
+.faq {
+  display: grid;
+  gap: 0.75rem;
+}
+.faq-item {
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.1rem 1.4rem;
+}
+.faq-q {
+  font-weight: 600;
+  font-size: 0.97rem;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.005em;
+}
+.faq-a {
+  font-size: 0.92rem;
+  color: var(--text-mute);
+  line-height: 1.6;
+}
+.faq-a strong { color: var(--text); font-weight: 500; }
+
+/* TIMELINE */
+.timeline {
+  display: grid;
+  gap: 1rem;
+  position: relative;
+  padding-left: 2rem;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0.5rem;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: linear-gradient(180deg, var(--accent), transparent);
+}
+.timeline-item {
+  position: relative;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -1.95rem;
+  top: 6px;
+  width: 11px; height: 11px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px var(--bg), 0 0 12px var(--accent-glow);
+}
+.timeline-when {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-bright);
+  margin-bottom: 4px;
+}
+.timeline-what {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.55;
+}
+
+/* FOOTER */
+footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+.footer-help {
+  font-size: 0.9rem;
+  color: var(--text-mute);
+  margin-bottom: 0.75rem;
+}
+.footer-help a {
+  color: var(--accent-bright);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(139,92,246,0.3);
+  transition: border-color 0.2s;
+}
+.footer-help a:hover { border-color: var(--accent-bright); }
+.footer-brand {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-top: 1rem;
+}
+
+@media print {
+  body { background: white; color: #18181b; }
+  body::before { display: none; }
+  .brand-mark {
+    background: #6d28d9;
+    box-shadow: none;
+  }
+  .info-strip { background: #e4e4e7; border-color: #d4d4d8; }
+  .info-cell { background: white; }
+  .info-label { color: #71717a; }
+  .info-value { color: #18181b; }
+  .step, .faq-item, .checklist li {
+    background: #fafafa;
+    border-color: #e4e4e7;
+    page-break-inside: avoid;
+  }
+  .step-title, .faq-q, h1, h2, .timeline-what { color: #18181b; }
+  .step-body, .faq-a, .lede, p, .info-value, .checklist li { color: #3f3f46; }
+  .step-body strong, .faq-a strong, .reply-list li strong { color: #18181b; }
+  .reply-block { background: #faf5ff; border-color: #c4b5fd; }
+  .reply-block::before { display: none; }
+  .reply-title, .eyebrow, .section-label, .timeline-when, .platform-tag { color: #6d28d9; }
+  .section-label::before { background: #6d28d9; }
+  .eyebrow { background: #f3e8ff; border-color: #d8b4fe; }
+  .example { background: #fafafa; border-color: #e4e4e7; }
+  .example .field { color: #6d28d9; }
+  .step-body code, .path { background: #f3e8ff; color: #6d28d9; border-color: #d8b4fe; }
+  .note-inline { background: #faf5ff; color: #52525b; }
+  .note-inline strong { color: #6d28d9; }
+  h1 em { color: #6d28d9; -webkit-text-fill-color: #6d28d9; }
+  footer { border-color: #e4e4e7; }
+  .footer-help { color: #52525b; }
+  .footer-help a { color: #6d28d9; }
+  section { page-break-inside: avoid; }
+}
+
+@media (max-width: 600px) {
+  main { padding: 2.5rem 1.25rem 4rem; }
+  .info-strip { grid-template-columns: 1fr; }
+  h1 { font-size: 1.85rem; }
+  .step { padding: 1.25rem 1.4rem; }
+  .reply-block { padding: 1.5rem; }
+}
+</style>
+</head>
+<body>
+<main>
+
+<div class="brand-row">
+  <div class="brand">
+    <span class="brand-mark"></span>
+    <span class="brand-name">DockIntake</span>
+  </div>
+  <div class="platform-tag">Wix · Setup Guide</div>
+</div>
+
+<div class="hero">
+  <div class="eyebrow">Welcome aboard</div>
+  <h1>Let's connect your Wix site to <em>instant lead alerts.</em></h1>
+  <p class="lede">This is the one thing we need from you to wire everything up. It takes about five minutes and you won't share any passwords — Wix uses a secure handshake that lets you authorize the connection without exposing your credentials.</p>
+</div>
+
+<div class="info-strip">
+  <div class="info-cell">
+    <div class="info-label">Time required</div>
+    <div class="info-value">~5 minutes</div>
+  </div>
+  <div class="info-cell">
+    <div class="info-label">Password needed</div>
+    <div class="info-value">None — OAuth</div>
+  </div>
+  <div class="info-cell">
+    <div class="info-label">Live within</div>
+    <div class="info-value">48 hours</div>
+  </div>
+</div>
+
+<section>
+  <div class="section-label">Before you start</div>
+  <h2>What you'll need on hand.</h2>
+  <ul class="checklist">
+    <li>Your Wix login (just to be logged in — we never see it)</li>
+    <li>The phone number where you want SMS alerts to land</li>
+    <li>About five uninterrupted minutes</li>
+  </ul>
+</section>
+
+<section>
+  <div class="section-label">Step by step</div>
+  <h2>Six steps. That's it.</h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-title">Log into your Wix account</div>
+      <div class="step-body">
+        <p>Head to <code>wix.com</code> and log in. From your dashboard, open the website that has the contact form you want connected.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-title">Open the App Market</div>
+      <div class="step-body">
+        <p>In the left-hand menu of your Wix dashboard, find <span class="path">App Market</span>. It's sometimes shown as a small grid icon.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-title">Search for Zapier</div>
+      <div class="step-body">
+        <p>In the search bar at the top, type <strong>Zapier</strong>. Click the result, then click the blue <strong>Add to Site</strong> button. Wix will confirm — click <strong>Add to Site</strong> once more.</p>
+        <div class="note-inline"><strong>What is Zapier?</strong> It's the middleware we use to listen for your form submissions and trigger the SMS alerts. Standard, widely-trusted tool — you don't need to know how it works.</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-title">Connect your Zapier account</div>
+      <div class="step-body">
+        <p>Wix will redirect you to Zapier to authorize the connection.</p>
+        <p><strong>No Zapier account yet?</strong> Click <strong>Sign Up</strong>. The free plan works — we cover the paid features on our end.</p>
+        <p><strong>Already have one?</strong> Log in with your existing email.</p>
+        <p>When prompted, click <strong>Allow</strong> to give Zapier permission to read form submissions from your Wix site. You'll see a confirmation that says <em>"Wix connected successfully."</em></p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-title">Send us your details</div>
+      <div class="step-body">
+        <p>Reply to our setup email with the four things listed in the next section. That's everything we need to build the connection on our side.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-title">We take it from here</div>
+      <div class="step-body">
+        <p>Within 48 hours we'll wire up the alert system, run a test submission ourselves, and email you a confirmation that everything is live. You'll then run your own test to see your phone buzz in real time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-label">Reply with these four things</div>
+  <h2>What to send back to us.</h2>
+
+  <div class="reply-block">
+    <div class="reply-title">Hit reply on our setup email and include</div>
+    <ul class="reply-list">
+      <li><span class="num">01</span><div><strong>The email you used to log into Zapier</strong><em>So we can find the right account and build your Zap.</em></div></li>
+      <li><span class="num">02</span><div><strong>The phone number for SMS alerts</strong><em>This is where every new lead text will land.</em></div></li>
+      <li><span class="num">03</span><div><strong>Your website URL</strong><em>So we can identify the exact form on your site.</em></div></li>
+      <li><span class="num">04</span><div><strong>Custom auto-reply message <span style="opacity:0.6">(optional)</span></strong><em>The text your customer gets the second they submit your form. If you skip this, we use our default.</em></div></li>
+    </ul>
+
+    <div class="example">
+      <span class="label">Example reply</span>
+      <span class="field">Zapier email:</span> mike@mikesroofing.com<br>
+      <span class="field">SMS phone:</span> (612) 555-0182<br>
+      <span class="field">Site URL:</span> mikesroofing.com<br>
+      <span class="field">Auto-reply:</span> "Thanks! We'll call you back within the hour during business hours."
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-label">What happens next</div>
+  <h2>Your timeline.</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-when">Today</div>
+      <div class="timeline-what">You install the Zapier app on your Wix site and reply with your details.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-when">Within 24 hours</div>
+      <div class="timeline-what">We log in, build the connection, configure your auto-reply, and run a test submission ourselves.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-when">Within 48 hours</div>
+      <div class="timeline-what">You get a confirmation email. You submit a test on your own form and watch your phone buzz with the alert in under 60 seconds.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-when">From day three onward</div>
+      <div class="timeline-what">Every real lead triggers your alert. You call them while they're still deciding. You book more jobs.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-label">Common questions</div>
+  <h2>Just in case.</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-q">Will this slow down my website?</div>
+      <div class="faq-a">No. Zapier runs in the background after a form is submitted — your site loads exactly the same as it does today.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I cancel later?</div>
+      <div class="faq-a">Yes. Go to your Wix App Market, click Manage Apps, and remove Zapier. The connection breaks and your site goes back to its old setup. <strong>No long-term contract — cancel anytime.</strong></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What if I change my phone number?</div>
+      <div class="faq-a">Email us. Takes 30 seconds to update on our end.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Does this work for multiple forms on my site?</div>
+      <div class="faq-a">Yes. Mention which forms you want connected when you reply and we'll wire them all up.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What about spam form submissions?</div>
+      <div class="faq-a">We can add basic filters (ignore submissions with no phone number, ignore obvious bot patterns). Mention it when we set up.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-label">Stuck on anything?</div>
+  <h2>We'll walk you through it.</h2>
+  <p>If any step is unclear, just hit reply. We'll get on a five-minute call with you, send a screen recording, or walk you through it however is easiest. No question is too small.</p>
+</section>
+
+<footer>
+  <div class="footer-help">Questions? Email <a href="mailto:help@dockintake.com">help@dockintake.com</a></div>
+  <div class="footer-brand">DockIntake · Built for the trades</div>
+</footer>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DockIntake Setup — Squarespace</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #0a0a0f; --bg-soft: #14141c; --bg-card: #1a1a24; --bg-elev: #1f1f2c;
+  --line: rgba(255,255,255,0.08); --line-strong: rgba(255,255,255,0.14);
+  --text: #f4f4f5; --text-mute: #a1a1aa; --text-dim: #71717a;
+  --accent: #8b5cf6; --accent-bright: #a78bfa;
+  --accent-soft: rgba(139,92,246,0.12); --accent-glow: rgba(139,92,246,0.35);
+  --warn: #f59e0b; --warn-soft: rgba(245,158,11,0.12);
+  --sans: 'Geist', system-ui, sans-serif; --mono: 'Geist Mono', ui-monospace, monospace;
+}
+body { font-family: var(--sans); background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; letter-spacing: -0.01em; line-height: 1.5; }
+body::before { content: ''; position: fixed; inset: 0; background-image: radial-gradient(circle at 15% 10%, rgba(139,92,246,0.08) 0%, transparent 40%), radial-gradient(circle at 85% 90%, rgba(139,92,246,0.05) 0%, transparent 40%), linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px); background-size: 100% 100%, 100% 100%, 56px 56px, 56px 56px; pointer-events: none; z-index: 0; }
+main { position: relative; z-index: 1; max-width: 740px; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
+.brand-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 3rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--line); }
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand-mark { width: 36px; height: 36px; background: linear-gradient(135deg, #8b5cf6, #6d28d9); border-radius: 9px; position: relative; box-shadow: 0 0 24px rgba(139,92,246,0.3), inset 0 1px 0 rgba(255,255,255,0.15); }
+.brand-mark::before { content: ''; position: absolute; top: 9px; left: 7px; right: 7px; height: 2px; background: white; border-radius: 1px; box-shadow: 0 5px 0 white, 0 10px 0 white; }
+.brand-name { font-weight: 700; font-size: 1.05rem; letter-spacing: -0.025em; }
+.platform-tag { display: flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-mute); }
+.platform-tag::before { content: ''; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 8px var(--accent-glow); }
+.hero { margin-bottom: 3.5rem; }
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.25rem; padding: 6px 12px; background: var(--accent-soft); border: 1px solid rgba(139,92,246,0.2); border-radius: 100px; }
+.eyebrow::before { content: ''; width: 5px; height: 5px; background: var(--accent-bright); border-radius: 50%; }
+h1 { font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 700; letter-spacing: -0.035em; line-height: 1.05; margin-bottom: 1rem; }
+h1 em { font-style: normal; background: linear-gradient(135deg, var(--accent), var(--accent-bright)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.lede { font-size: 1.08rem; color: var(--text-mute); line-height: 1.6; max-width: 580px; }
+.info-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; margin-bottom: 2rem; }
+.info-cell { background: var(--bg-soft); padding: 1.25rem 1.4rem; }
+.info-label { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 6px; }
+.info-value { font-size: 0.95rem; font-weight: 600; color: var(--text); }
+.callout { background: linear-gradient(135deg, rgba(245,158,11,0.08), rgba(245,158,11,0.03)); border: 1px solid rgba(245,158,11,0.25); border-radius: 14px; padding: 1.5rem 1.75rem; margin-bottom: 3rem; position: relative; }
+.callout-label { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--warn); margin-bottom: 0.65rem; display: flex; align-items: center; gap: 8px; }
+.callout-label::before { content: '!'; width: 18px; height: 18px; background: var(--warn); color: var(--bg); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.72rem; }
+.callout-title { font-size: 1.05rem; font-weight: 600; color: var(--text); margin-bottom: 0.5rem; }
+.callout-body { font-size: 0.92rem; color: var(--text-mute); line-height: 1.6; }
+.callout-body strong { color: var(--text); }
+section { margin-bottom: 3rem; }
+.section-label { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.9rem; display: flex; align-items: center; gap: 10px; }
+.section-label::before { content: ''; width: 24px; height: 1px; background: var(--accent); }
+h2 { font-size: 1.55rem; font-weight: 600; letter-spacing: -0.025em; margin-bottom: 1.25rem; line-height: 1.2; }
+p { font-size: 0.98rem; color: var(--text-mute); line-height: 1.65; margin-bottom: 1rem; }
+p:last-child { margin-bottom: 0; }
+.checklist { list-style: none; display: grid; gap: 0.6rem; }
+.checklist li { display: flex; align-items: flex-start; gap: 12px; padding: 0.85rem 1.1rem; background: var(--bg-soft); border: 1px solid var(--line); border-radius: 10px; font-size: 0.95rem; color: var(--text); line-height: 1.5; }
+.checklist li::before { content: ''; width: 18px; height: 18px; margin-top: 2px; border-radius: 50%; background: var(--accent-soft); border: 1px solid rgba(139,92,246,0.4); flex-shrink: 0; position: relative; }
+.checklist li::after { content: ''; position: absolute; margin-left: 5px; margin-top: 7px; width: 8px; height: 4px; border-left: 2px solid var(--accent); border-bottom: 2px solid var(--accent); transform: rotate(-45deg); }
+.steps { display: grid; gap: 1rem; counter-reset: step; }
+.step { background: var(--bg-card); border: 1px solid var(--line); border-radius: 14px; padding: 1.5rem 1.75rem; position: relative; overflow: hidden; }
+.step::before { counter-increment: step; content: counter(step, decimal-leading-zero); position: absolute; top: 1.4rem; right: 1.5rem; font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.12em; color: var(--text-dim); }
+.step-title { font-size: 1.08rem; font-weight: 600; letter-spacing: -0.015em; color: var(--text); margin-bottom: 0.65rem; padding-right: 60px; }
+.step-body { font-size: 0.95rem; color: var(--text-mute); line-height: 1.65; }
+.step-body p { margin-bottom: 0.7rem; font-size: 0.95rem; }
+.step-body p:last-child { margin-bottom: 0; }
+.step-body strong { color: var(--text); font-weight: 600; }
+.step-body code { font-family: var(--mono); font-size: 0.85em; background: var(--bg-elev); color: var(--accent-bright); padding: 1px 6px; border-radius: 4px; border: 1px solid var(--line); }
+.path { display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 0.82em; color: var(--accent-bright); background: var(--accent-soft); padding: 2px 8px; border-radius: 5px; border: 1px solid rgba(139,92,246,0.2); }
+.note-inline { margin-top: 0.85rem; padding: 0.75rem 1rem; background: var(--bg-elev); border-left: 2px solid var(--accent); border-radius: 0 8px 8px 0; font-size: 0.88rem; color: var(--text-mute); line-height: 1.55; }
+.note-inline strong { color: var(--accent-bright); }
+.reply-block { background: linear-gradient(135deg, var(--bg-card), var(--bg-elev)); border: 1px solid rgba(139,92,246,0.25); border-radius: 16px; padding: 2rem 2.25rem; position: relative; overflow: hidden; }
+.reply-block::before { content: ''; position: absolute; top: -100px; right: -100px; width: 250px; height: 250px; background: radial-gradient(circle, var(--accent-glow), transparent 70%); pointer-events: none; }
+.reply-title { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-bright); margin-bottom: 1rem; }
+.reply-list { list-style: none; display: grid; gap: 0.65rem; margin-bottom: 1.25rem; }
+.reply-list li { display: flex; gap: 12px; font-size: 0.95rem; color: var(--text); line-height: 1.55; }
+.reply-list li span.num { font-family: var(--mono); font-size: 0.78rem; color: var(--accent-bright); flex-shrink: 0; margin-top: 2px; width: 22px; }
+.reply-list li strong { font-weight: 600; }
+.reply-list li em { color: var(--text-mute); font-style: normal; font-size: 0.88rem; display: block; margin-top: 2px; }
+.example { margin-top: 1.5rem; padding: 1.1rem 1.25rem; background: rgba(0,0,0,0.3); border: 1px solid var(--line); border-radius: 10px; font-family: var(--mono); font-size: 0.85rem; color: var(--text-mute); line-height: 1.75; }
+.example .label { display: block; font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px; }
+.example .field { color: var(--accent-bright); }
+.faq { display: grid; gap: 0.75rem; }
+.faq-item { background: var(--bg-soft); border: 1px solid var(--line); border-radius: 12px; padding: 1.1rem 1.4rem; }
+.faq-q { font-weight: 600; font-size: 0.97rem; color: var(--text); margin-bottom: 0.5rem; letter-spacing: -0.005em; }
+.faq-a { font-size: 0.92rem; color: var(--text-mute); line-height: 1.6; }
+.faq-a strong { color: var(--text); font-weight: 500; }
+.timeline { display: grid; gap: 1rem; position: relative; padding-left: 2rem; }
+.timeline::before { content: ''; position: absolute; left: 0.5rem; top: 8px; bottom: 8px; width: 1px; background: linear-gradient(180deg, var(--accent), transparent); }
+.timeline-item { position: relative; }
+.timeline-item::before { content: ''; position: absolute; left: -1.95rem; top: 6px; width: 11px; height: 11px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px var(--bg), 0 0 12px var(--accent-glow); }
+.timeline-when { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-bright); margin-bottom: 4px; }
+.timeline-what { font-size: 0.95rem; color: var(--text); line-height: 1.55; }
+footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--line); text-align: center; }
+.footer-help { font-size: 0.9rem; color: var(--text-mute); margin-bottom: 0.75rem; }
+.footer-help a { color: var(--accent-bright); text-decoration: none; border-bottom: 1px solid rgba(139,92,246,0.3); }
+.footer-help a:hover { border-color: var(--accent-bright); }
+.footer-brand { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-top: 1rem; }
+@media print {
+  body { background: white; color: #18181b; }
+  body::before { display: none; }
+  .brand-mark { background: #6d28d9; box-shadow: none; }
+  .info-strip { background: #e4e4e7; border-color: #d4d4d8; }
+  .info-cell { background: white; }
+  .info-label { color: #71717a; } .info-value { color: #18181b; }
+  .step, .faq-item, .checklist li { background: #fafafa; border-color: #e4e4e7; page-break-inside: avoid; }
+  .step-title, .faq-q, h1, h2, .timeline-what, .callout-title { color: #18181b; }
+  .step-body, .faq-a, .lede, p, .info-value, .checklist li, .callout-body { color: #3f3f46; }
+  .step-body strong, .faq-a strong, .reply-list li strong, .callout-body strong { color: #18181b; }
+  .reply-block { background: #faf5ff; border-color: #c4b5fd; } .reply-block::before { display: none; }
+  .reply-title, .eyebrow, .section-label, .timeline-when, .platform-tag { color: #6d28d9; }
+  .section-label::before { background: #6d28d9; }
+  .eyebrow { background: #f3e8ff; border-color: #d8b4fe; }
+  .callout { background: #fffbeb; border-color: #fcd34d; }
+  .callout-label { color: #b45309; } .callout-label::before { background: #b45309; color: white; }
+  .example { background: #fafafa; border-color: #e4e4e7; } .example .field { color: #6d28d9; }
+  .step-body code, .path { background: #f3e8ff; color: #6d28d9; border-color: #d8b4fe; }
+  .note-inline { background: #faf5ff; color: #52525b; } .note-inline strong { color: #6d28d9; }
+  h1 em { color: #6d28d9; -webkit-text-fill-color: #6d28d9; }
+  footer { border-color: #e4e4e7; } .footer-help { color: #52525b; } .footer-help a { color: #6d28d9; }
+  section { page-break-inside: avoid; }
+}
+@media (max-width: 600px) {
+  main { padding: 2.5rem 1.25rem 4rem; }
+  .info-strip { grid-template-columns: 1fr; }
+  h1 { font-size: 1.85rem; }
+  .step { padding: 1.25rem 1.4rem; }
+  .reply-block, .callout { padding: 1.5rem; }
+}
+</style>
+</head>
+<body>
+<main>
+
+<div class="brand-row">
+  <div class="brand"><span class="brand-mark"></span><span class="brand-name">DockIntake</span></div>
+  <div class="platform-tag">Squarespace · Setup Guide</div>
+</div>
+
+<div class="hero">
+  <div class="eyebrow">Welcome aboard</div>
+  <h1>Let's connect your Squarespace site to <em>instant lead alerts.</em></h1>
+  <p class="lede">Squarespace makes this easy — there's a built-in integration point that connects form submissions to our alert system. About five minutes of clicking. No passwords shared on your end.</p>
+</div>
+
+<div class="info-strip">
+  <div class="info-cell">
+    <div class="info-label">Time required</div>
+    <div class="info-value">~5 minutes</div>
+  </div>
+  <div class="info-cell">
+    <div class="info-label">Password needed</div>
+    <div class="info-value">None — OAuth</div>
+  </div>
+  <div class="info-cell">
+    <div class="info-label">Live within</div>
+    <div class="info-value">48 hours</div>
+  </div>
+</div>
+
+<div class="callout">
+  <div class="callout-label">Plan requirement</div>
+  <div class="callout-title">Business plan or higher required</div>
+  <div class="callout-body">Squarespace's <strong>Personal plan does not support</strong> the form integration we use. If you're on Personal, you'll need to either upgrade to Business ($23/mo through Squarespace) or we'll build you a dedicated landing page that runs independently of your existing site. Mention which you'd prefer when you reply and we'll handle it from there.</div>
+</div>
+
+<section>
+  <div class="section-label">Before you start</div>
+  <h2>What you'll need on hand.</h2>
+  <ul class="checklist">
+    <li>Your Squarespace login (we never see your password)</li>
+    <li>Confirmation that you're on the Business plan or higher</li>
+    <li>The phone number where you want SMS alerts to land</li>
+    <li>About five uninterrupted minutes</li>
+  </ul>
+</section>
+
+<section>
+  <div class="section-label">Step by step</div>
+  <h2>Seven clicks. That's it.</h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-title">Log into Squarespace</div>
+      <div class="step-body">
+        <p>Head to <code>squarespace.com</code> and log in. Open the website with the contact form you want connected.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-title">Open Settings</div>
+      <div class="step-body">
+        <p>From your Squarespace dashboard, click <span class="path">Settings</span> in the left-hand menu.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-title">Find the Advanced section</div>
+      <div class="step-body">
+        <p>Scroll down inside Settings until you see <span class="path">Advanced</span>. Click to expand the menu.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-title">Open Form &amp; Pop-Up Storage</div>
+      <div class="step-body">
+        <p>Inside the Advanced menu, click <span class="path">Form &amp; Pop-Up Storage</span>. This is where Squarespace lets you connect external services to your contact forms.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-title">Connect Zapier</div>
+      <div class="step-body">
+        <p>You'll see a list of services Squarespace can send form submissions to. Find <strong>Zapier</strong> and click <strong>Connect</strong>. A new window will open asking you to log in.</p>
+        <p><strong>No Zapier account?</strong> Click Sign Up. Free plan works — we cover the paid features on our end.</p>
+        <p><strong>Already have one?</strong> Log in. When prompted, click <strong>Allow</strong> or <strong>Authorize</strong> to give Zapier permission to receive form submissions from your Squarespace site.</p>
+        <div class="note-inline"><strong>What is Zapier?</strong> The middleware we use to listen for your form submissions and trigger your SMS alerts. Standard tool, widely trusted, you never have to interact with it again after this step.</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-title">Send us your details</div>
+      <div class="step-body">
+        <p>Reply to our setup email with the four things listed in the next section. That's everything we need to build the connection.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-title">We take it from here</div>
+      <div class="step-body">
+        <p>Within 48 hours we'll wire up the alert system, run a test submission ourselves, and email you a confirmation that everything is live.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-label">Reply with these four things</div>
+  <h2>What to send back to us.</h2>
+
+  <div class="reply-block">
+    <div class="reply-title">Hit reply on our setup email and include</div>
+    <ul class="reply-list">
+      <li><span class="num">01</span><div><strong>The email you used to log into Zapier</strong><em>So we can find the right account and build your Zap.</em></div></li>
+      <li><span class="num">02</span><div><strong>The phone number for SMS alerts</strong><em>This is where every new lead text will land.</em></div></li>
+      <li><span class="num">03</span><div><strong>The exact name of the form on your site</strong><em>e.g. "Contact Us" or "Get a Quote." Helps us connect to the right form if you have multiple.</em></div></li>
+      <li><span class="num">04</span><div><strong>Custom auto-reply message <span style="opacity:0.6">(optional)</span></strong><em>The text your customer gets the second they submit. If skipped, we use our default.</em></div></li>
+    </ul>
+
+    <div class="example">
+      <span class="label">Example reply</span>
+      <span class="field">Zapier email:</span> mike@mikesroofing.com<br>
+      <span class="field">SMS phone:</span> (612) 555-0182<br>
+      <span class="field">Form name:</span> Free Estimate Request<br>
+      <span class="field">Auto-reply:</span> "Thanks! We'll call you back within the hour."
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-label">What happens next</div>
+  <h2>Your timeline.</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-when">Today</div>
+      <div class="timeline-what">You connect Zapier in your Squarespace settings and reply with your details.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-when">Within 24 hours</div>
+      <div class="timeline-what">We log in, build the connection, configure your auto-reply, and run a test submission.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-when">Within 48 hours</div>
+      <div class="timeline-what">You get a confirmation email. You submit a test on your own form and watch your phone buzz in under 60 seconds.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-when">From day three onward</div>
+      <div class="timeline-what">Every real lead triggers your alert. You call them while they're still deciding. You book more jobs.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-label">Common questions</div>
+  <h2>Just in case.</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-q">What if I'm on the Personal plan?</div>
+      <div class="faq-a">Two options: <strong>(1)</strong> Upgrade to Business — $23/month through Squarespace, gives you immediate access to this integration. <strong>(2)</strong> Let us build you a separate landing page hosted on our infrastructure. That page works independently of your existing site and hooks into the alert system directly. Mention which you'd prefer when you reply.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Will this slow down my Squarespace site?</div>
+      <div class="faq-a">No. The integration runs in the background after a form is submitted — your site speed and visitor experience are unchanged.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Does this work for multiple forms?</div>
+      <div class="faq-a">Yes. If you have several forms (Contact, Quote Request, etc.), tell us which ones to connect when you reply and we'll wire them all up.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I disconnect later?</div>
+      <div class="faq-a">Yes. Settings → Advanced → Form &amp; Pop-Up Storage → click Zapier → Disconnect. <strong>No long-term contract — cancel anytime.</strong></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What if I change my phone number?</div>
+      <div class="faq-a">Email us. Takes 30 seconds to update on our end.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-label">Stuck on anything?</div>
+  <h2>We'll walk you through it.</h2>
+  <p>If any step is unclear or you're not sure which plan you're on, just hit reply. We can get on a five-minute call, send a screen recording, or walk you through it however is easiest.</p>
+</section>
+
+<footer>
+  <div class="footer-help">Questions? Email <a href="mailto:help@dockintake.com">help@dockintake.com</a></div>
+  <div class="footer-brand">DockIntake · Built for the trades</div>
+</footer>
+
+</main>
+</body>
+</html>
