@@ -217,67 +217,68 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Glassmorphism scrollbar — webkit (Chrome, Safari, Edge) */
+/* Glassmorphism scrollbar — webkit (Chrome, Safari macOS, Edge, Android Chrome) */
+/* NOTE: iOS Safari ignores ::-webkit-scrollbar entirely; system overlay always renders. */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   background: transparent;
 }
 ::-webkit-scrollbar-track {
-  background: rgba(11, 11, 15, 0.18);
+  background: rgba(11, 11, 15, 0.12);
   border-radius: 9999px;
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.25);
 }
 ::-webkit-scrollbar-thumb {
   background:
     linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0.10) 0%,
-      rgba(139, 126, 239, 0.28) 22%,
-      rgba(108, 92, 231, 0.20) 78%,
-      rgba(255, 255, 255, 0.04) 100%
+      rgba(180, 168, 250, 0.22) 0%,
+      rgba(139, 126, 239, 0.58) 28%,
+      rgba(108, 92, 231, 0.52) 72%,
+      rgba(74, 61, 196, 0.32) 100%
     );
   border-radius: 9999px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(139, 126, 239, 0.35);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.20),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.25),
-    inset 1px 0 0 rgba(255, 255, 255, 0.06),
-    inset -1px 0 0 rgba(0, 0, 0, 0.18),
-    0 0 10px rgba(108, 92, 231, 0.22),
-    0 0 22px rgba(108, 92, 231, 0.08);
+    inset 0 1px 0 rgba(220, 212, 255, 0.18),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.22),
+    inset 1px 0 0 rgba(180, 168, 250, 0.10),
+    inset -1px 0 0 rgba(0, 0, 0, 0.22),
+    0 0 12px rgba(108, 92, 231, 0.55),
+    0 0 26px rgba(108, 92, 231, 0.22);
   transition:
-    background 0.25s ease,
-    box-shadow 0.25s ease,
-    border-color 0.25s ease;
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
 ::-webkit-scrollbar-thumb:hover {
   background:
     linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0.16) 0%,
-      rgba(160, 148, 245, 0.42) 22%,
-      rgba(122, 108, 239, 0.34) 78%,
-      rgba(255, 255, 255, 0.06) 100%
+      rgba(200, 192, 255, 0.32) 0%,
+      rgba(160, 148, 245, 0.72) 28%,
+      rgba(122, 108, 239, 0.66) 72%,
+      rgba(90, 76, 220, 0.42) 100%
     );
-  border-color: rgba(255, 255, 255, 0.14);
+  border-color: rgba(160, 148, 245, 0.55);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.28),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.30),
-    inset 1px 0 0 rgba(255, 255, 255, 0.08),
-    inset -1px 0 0 rgba(0, 0, 0, 0.22),
-    0 0 18px rgba(108, 92, 231, 0.45),
-    0 0 36px rgba(108, 92, 231, 0.18);
+    inset 0 1px 0 rgba(220, 212, 255, 0.26),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.26),
+    inset 1px 0 0 rgba(180, 168, 250, 0.14),
+    inset -1px 0 0 rgba(0, 0, 0, 0.26),
+    0 0 20px rgba(108, 92, 231, 0.75),
+    0 0 42px rgba(108, 92, 231, 0.32);
 }
 ::-webkit-scrollbar-thumb:active {
   background:
     linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0.20) 0%,
-      rgba(180, 168, 250, 0.55) 22%,
-      rgba(140, 124, 245, 0.45) 78%,
-      rgba(255, 255, 255, 0.08) 100%
+      rgba(220, 212, 255, 0.42) 0%,
+      rgba(180, 168, 250, 0.85) 28%,
+      rgba(140, 124, 245, 0.80) 72%,
+      rgba(110, 96, 235, 0.50) 100%
     );
+  border-color: rgba(180, 168, 250, 0.7);
 }
 ::-webkit-scrollbar-corner {
   background: transparent;
@@ -289,13 +290,13 @@ html {
 }
 @media (max-width: 767px) {
   ::-webkit-scrollbar {
-    width: 4px;
-    height: 4px;
+    width: 6px;
+    height: 6px;
   }
 }
 
-/* Firefox fallback (thin width, no glassy gradient support) */
+/* Firefox fallback */
 * {
   scrollbar-width: thin;
-  scrollbar-color: rgba(108, 92, 231, 0.35) rgba(11, 11, 15, 0.18);
+  scrollbar-color: rgba(108, 92, 231, 0.6) rgba(11, 11, 15, 0.12);
 }
