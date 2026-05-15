@@ -236,6 +236,19 @@ export default function PrivacyPolicy() {
             </p>
           </Section>
 
+          <Section title="SMS Communications">
+            <p>
+              If you enable SMS notifications through DockIntake, we may send
+              operational text messages related to lead notifications, account
+              activity, or service updates. Message frequency varies based on
+              usage. Message and data rates may apply.
+            </p>
+            <p>
+              We do not sell or share mobile opt-in information with third
+              parties for marketing purposes.
+            </p>
+          </Section>
+
           <Section title="11. Contact">
             <p>
               DockIntake<br />

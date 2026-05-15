@@ -284,6 +284,16 @@ export default function Terms() {
             </p>
           </Section>
 
+          <Section title="SMS Terms">
+            <p>
+              By enabling SMS notifications through DockIntake, you consent to
+              receive operational text messages related to customer lead alerts
+              and account activity. Message frequency varies. Message and data
+              rates may apply. Reply <strong>STOP</strong> to unsubscribe or{" "}
+              <strong>HELP</strong> for assistance.
+            </p>
+          </Section>
+
           <Section title="15. Contact">
             <p>
               DockIntake<br />
